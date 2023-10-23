@@ -1,69 +1,63 @@
 import { useState } from "react";
 import LevelCard from "../component/card";
 import Arrow from "../component/arrow";
-import {Helmet, HelmetProvider} from 'react-helmet-async';
+import { Helmet, HelmetProvider } from "react-helmet-async";
 function Full() {
   //the database
   let ImgProp = [
     {
       name: "ብሔራዊ",
       img: "/image/final beharaw1.png",
-      id: "first",
       Level: "ሀ",
-      q1complete:100,
-      q2complete:100,
-      q3complete:100,
-      min:0
+      q1complete: 100,
+      q2complete: 100,
+      q3complete: 100,
+      min: 0,
     },
     {
-      name: "መርካቶ",  
+      name: "መርካቶ",
       img: "/image/markato1.png",
-      id: "second",
       Level: "ለ",
-      q1complete:100,
-      q2complete:100,
-      q3complete:34,
-      min:0
+      q1complete: 100,
+      q2complete: 100,
+      q3complete: 34,
+      min: 0,
     },
     {
       name: "ፒያሳ",
       img: "/image/piassa.png",
-      id: "third",
       Level: "ሐ",
-      q1complete:25,
-      q2complete:56,
-      q3complete:100,
-      min:0
+      q1complete: 25,
+      q2complete: 56,
+      q3complete: 100,
+      min: 0,
     },
     {
       name: "4ኪሎ",
       img: "/image/4kilo.png",
-      id: "first",
       Level: "መ",
-      q1complete:34,
-      q2complete:100,
-      q3complete:0,
-      min:300
+      q1complete: 0,
+      q2complete: 0,
+      q3complete: 0,
+      min: 300,
     },
     {
       name: "ብሄራዊ",
-      img: "/image/g.jpg",
-      id: "second",
+      img: "/image/4kilo.png",
       Level: "ረ",
-      q1complete:0,
-      q2complete:0,
-      q3complete:0,
-      min:600
+      q1complete: 0,
+      q2complete: 0,
+      q3complete: 0,
+      min: 600,
     },
     {
       name: "ብሄራዊ",
       img: "/image/final beharaw.png",
-      id: "third",
       Level: "ሰ",
-      q1complete:100,
-      q2complete:67,
-      q3complete:24,
-      min:900
+      q1complete: 0,
+      q2complete: 0,
+      q3complete: 0,
+      min: 900,
     },
   ];
   //end level
@@ -71,7 +65,18 @@ function Full() {
   //the arrow
   const [slide, setslide] = useState("");
   //holds the level to be displayed
-  let NewArr = [];
+  let NewArr = [
+    {
+      id:  "first",
+    },
+    {
+      id:"second",
+    },
+    {
+      id: "third",
+    },
+
+  ];
   //index of the above, only till 2
   let index = 0;
   //adds the level to the display array by looping over the database array
@@ -96,14 +101,14 @@ function Full() {
   }
   return (
     <>
-    <HelmetProvider>
-      <div style={{ backgroundcolor: "#5e787d",   height: "100dvh"}}>
-      <Helmet>
-                <style>{'body { background-color: #5e787d; }'}</style>
-            </Helmet>
-        <Arrow slide={setslide} />
-        <LevelCard NewArr={NewArr} />
-      </div>
+      <HelmetProvider>
+        <div style={{ backgroundcolor: "#5e787d", height: "100dvh" }}>
+          <Helmet>
+            <style>{"body { background-color: #5e787d; }"}</style>
+          </Helmet>
+          <Arrow slide={setslide} />
+          <LevelCard NewArr={NewArr} />
+        </div>
       </HelmetProvider>
     </>
   );

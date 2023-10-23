@@ -8,6 +8,12 @@
     border-radius: 1rem;
     margin: 0.5rem;
 }
+.levelsactive{
+    max-width: 400px;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    filter : blur(6px)
+}
 .CardImg{
 max-width: 100%;
 box-shadow: 5px 10px 15px  #111111;
@@ -32,9 +38,12 @@ box-shadow: 5px 10px 15px  #111111;
     filter: blur(8px);
     z-index: 0;
 }
-
+.levels:not(:hover) .place{
+    display: none;
+}
 }
 .place{
+    position:absolute;
     margin-left:3%;
     margin-top: -38rem;
     padding: 0;
@@ -48,8 +57,25 @@ box-shadow: 5px 10px 15px  #111111;
     margin-top: -15%;
 }
 .coffee{
+    position: absolute;
+    display: inline;
     margin-top: 0.5rem;
+
 }
+.lock{
+    position: absolute;
+    display: inline;
+    margin-top: -20%;
+
+}
+.totalbuna{
+    position: absolute;
+    left: 90%;
+    display:flex;
+    gap: 10px;
+}
+
+
 
 
 
@@ -62,5 +88,12 @@ box-shadow: 5px 10px 15px  #111111;
     .levels{
         width: 350px;
         margin: 0;
+    }
+    .lock{
+        margin-top: -60%;
+    
+    }
+    .totalbuna{
+        left: 85%;
     }
 }
